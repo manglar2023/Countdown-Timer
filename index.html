@@ -20,7 +20,7 @@
             font-size: calc(50vh); 
             text-align: center;
             color: #0288d1; /* Color azul por defecto */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra para mejor visibilidad */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
         }
 
         /* Configurar controles para un mejor diseño */
@@ -37,19 +37,21 @@
             border: none;
             padding: 10px;
             border-radius: 5px; /* Bordes redondeados */
-            cursor: pointer; /* Cambia a una mano al pasar sobre el botón */
+            cursor: pointer;
         }
 
         button:hover {
             background-color: #0288d1; /* Cambia de color al pasar el ratón */
         }
 
-        /* Estilo del pie de página */
-        footer {
+        /* Estilo del texto "Creado por..." */
+        .autor {
             text-align: center;
-            margin: 20px;
-            font-size: 14px;
-            color: #555;
+            font-weight: bold;
+            color: blue;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     </style>
     <script>
@@ -59,12 +61,12 @@
 
         function playSound() {
             const audio = document.getElementById("sound");
-            audio.currentTime = 0; // Reiniciar audio
+            audio.currentTime = 0; 
             audio.play();
         }
 
         function startTimer() {
-            if (running) return; // Evitar iniciar si ya está corriendo
+            if (running) return; 
             running = true; 
 
             const freq1 = parseInt(document.getElementById("freq1-seconds").value, 10) +
@@ -120,6 +122,7 @@
     </script>
 </head>
 <body>
+    <div class="autor">Creado por Fernando Rodríguez Serrano</div>
     <div id="controls">
         <label for="freq1-time">Frecuencia 1 (min:s): </label>
         <input type="number" id="freq1-minutes" value="0" min="0" style="width: 50px;">
@@ -138,7 +141,5 @@
     </div>
 
     <audio id="sound" src="INICIO.mp3"></audio>
-
-    <footer>Creado por Perico Pérez</footer>
 </body>
 </html>
